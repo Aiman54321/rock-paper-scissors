@@ -12,131 +12,243 @@
   <script src="script.js" defer></script>
 
   <style>
-
-    *{
-
+    * {
       box-sizing: border-box;
-      overflow: hidden;
-     
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100svh;
+      background-color: #15141E;
+      border: 3px solid whitesmoke;
+      color: antiquewhite;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 0 16px 30px;
     }
 
     button {
-    
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: none;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
 
-  }
+    #project {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: antiquewhite;
+      font-family: "Shadows Into Light", cursive;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.15;
+      margin: clamp(28px, 6vh, 55px) 0 clamp(30px, 7vh, 70px);
+    }
 
-  body{
+    .chy {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(14px, 4vw, 42px);
+      flex-wrap: wrap;
+    }
 
-    background-color: #15141E;
-    height: 730px;
-    border: 3px solid whitesmoke;
+    .move {
+      width: clamp(105px, 18vw, 200px);
+      height: clamp(105px, 18vw, 200px);
+      display: block;
+      object-fit: contain;
+      background-color: transparent;
+      border: clamp(3px, 0.35vw, 5px) antiquewhite solid;
+      border-radius: 50%;
+      padding: clamp(22px, 4vw, 45px);
+      margin: 0;
+    }
 
-  }
+    .chy button:hover .move {
+      transform: scale(1.03);
+      transition: transform 0.15s ease;
+    }
 
+    .scoring {
+      width: min(100%, 650px);
+      margin: clamp(22px, 4vh, 35px) auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: antiquewhite;
+      font-family: "Shadows Into Light", cursive;
+      font-size: clamp(22px, 3vw, 32px);
+      text-align: center;
+    }
 
-  .move{
+    .scoring p {
+      margin: 0;
+      flex: 1;
+      white-space: nowrap;
+    }
 
-    width: 200px;
-    height: 200px;
-    background-color: transparent;
-    border: 5px antiquewhite solid;
-    border-radius: 50%;
-    padding: 45px;
-    margin-left: 10px;
-    margin-right: 30px;
-  
-  }
+    .princess {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: clamp(22px, 4vh, 38px) auto 0;
+    }
 
-  .reset
-  {
+    .reset {
+      width: clamp(58px, 8vw, 100px);
+      height: clamp(58px, 8vw, 100px);
+      object-fit: contain;
+      display: block;
+    }
 
-    width: 100px;
-    height: 100px;
-    background-color: transparent;
-  }
+    .btn:hover .reset {
+      transform: scale(1.05);
+      transition: transform 0.15s ease;
+    }
 
-  .chy{
+    #myModal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(450px, calc(100vw - 32px));
+      max-width: 450px;
+      min-height: 260px;
+      max-height: calc(100svh - 32px);
+      margin: 0;
+      border-radius: 20px;
+      background-color: #15141E;
+      color: white;
+      border: 5px solid white;
+      font-family: "Shadows Into Light", cursive;
+      font-weight: 400;
+      font-style: normal;
+      text-align: center;
+      padding: 30px 20px 24px;
+      font-size: clamp(22px, 3vw, 28px);
+      overflow: auto;
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 10px;
-  }
+    #statement {
+      margin: 0 0 22px;
+      line-height: 1.45;
+    }
 
-  .scoring{
+    dialog::backdrop {
+      background-color: rgba(21, 20, 30, 0.6);
+      backdrop-filter: blur(2px);
+    }
 
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 30px;
-    color: antiquewhite;
-    font-family: "Shadows Into Light", cursive;
-    margin-top: 22px;
-  }
+    .close-btn {
+      color: white;
+      font-family: "Shadows Into Light", cursive;
+      font-weight: 400;
+      font-style: normal;
+      text-align: center;
+      font-size: clamp(21px, 3vw, 25px);
+      border: 2px solid wheat;
+      padding: 2px 10px;
+      min-width: 78px;
+      min-height: 42px;
+    }
 
-  .princess
-  {
-    margin-left: 745px;
-    margin-top: 20px;
-  }
+    @media (max-width: 600px) {
+      body {
+        padding: 0 10px 24px;
+      }
 
-  #project
-  {
+      #project {
+        margin-top: 26px;
+        margin-bottom: 28px;
+      }
 
-    display: flex;
-    justify-content: center;
-    font-size: 40px;
-    color: antiquewhite;
-    font-family: "Shadows Into Light", cursive;
-    margin-top: 52px;
-  }
+      .chy {
+        gap: 14px;
+      }
 
-  #myModal 
-  {
-  width: 450px;
-  height: 300px;
-  border-radius: 20px;
-  background-color: #15141E;
-  color: white;
-  border: 5px solid white;
-  font-family: "Shadows Into Light", cursive;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-  padding-top: 40px;
-  font-size: 25px;
-  padding-bottom: 10px;
-  
-  }
+      .move {
+        width: min(28vw, 125px);
+        height: min(28vw, 125px);
+        padding: 24px;
+      }
 
-  dialog::backdrop{
+      .scoring {
+        gap: 8px;
+        margin-top: 22px;
+        font-size: clamp(19px, 6vw, 25px);
+      }
 
-  background-color: rgba(21, 20, 30, 0.6);
-  backdrop-filter: blur(2px);
+      .princess {
+        margin-top: 24px;
+      }
 
-  }
-  
+      #myModal {
+        width: calc(100vw - 24px);
+        min-height: 220px;
+        padding: 25px 14px 20px;
+        border-width: 4px;
+      }
+    }
 
- .close-btn
- {
-  color: white;
-  font-family: "Shadows Into Light", cursive;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-  font-size: 25px;
-  border: 2px solid wheat;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+    @media (max-width: 380px) {
+      #project {
+        font-size: 30px;
+        margin-bottom: 24px;
+      }
 
- }
- 
+      .chy {
+        gap: 9px;
+      }
+
+      .move {
+        width: 29vw;
+        height: 29vw;
+        padding: 18px;
+        border-width: 3px;
+      }
+
+      .scoring {
+        font-size: 18px;
+      }
+
+      .scoring p {
+        white-space: normal;
+      }
+    }
+
+    @media (max-height: 600px) and (min-width: 601px) {
+      #project {
+        margin-top: 18px;
+        margin-bottom: 24px;
+      }
+
+      .move {
+        width: 145px;
+        height: 145px;
+        padding: 30px;
+      }
+
+      .scoring {
+        margin-top: 16px;
+      }
+
+      .princess {
+        margin-top: 15px;
+      }
+    }
   </style>
 
 </head>

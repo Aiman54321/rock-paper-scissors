@@ -9,80 +9,108 @@
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
     <style>
-
-      *{
-
+      * {
         box-sizing: border-box;
+      }
+
+      html,
+      body {
         margin: 0;
         padding: 0;
-        overflow: hidden;
-        
+        width: 100%;
+        min-height: 100%;
       }
 
-      body{
-
-         background-color: #15141E;
-         position: relative;
-         border: whitesmoke solid 2px;
-         height: 735px;
-
-      }
-
-      .gani{
-
-        border: white 1px solid;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        position: absolute;
-        top: 580px;
-        left: 642px;
+      body {
+        min-height: 100svh;
         background-color: #15141E;
-        border-radius: 30px 30px 30px 30px;
-        box-shadow: 1px 2px 1px 2px antiquewhite;
+        position: relative;
+        border: 2px solid whitesmoke;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0 16px 30px;
       }
 
-    
+      p {
+        color: antiquewhite;
+        font-family: "Shadows Into Light", cursive;
+        font-weight: 800;
+        font-size: clamp(34px, 5vw, 50px);
+        line-height: 1.15;
+        text-align: center;
+        margin: clamp(30px, 7vh, 55px) 0 20px;
+      }
 
-      .gani a{
+      .one {
+        width: min(809px, 92vw);
+        height: min(377px, 43vw);
+        min-height: 220px;
+        background-image: url(download.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-color: transparent;
+        margin: 0 auto;
+      }
 
+      .gani {
+        display: block;
+        border: white 1px solid;
+        padding: 10px 20px;
+        background-color: #15141E;
+        border-radius: 30px;
+        box-shadow: 1px 2px 1px 2px antiquewhite;
+        margin: clamp(15px, 4vh, 30px) auto 0;
+      }
+
+      .gani a {
         list-style: none;
         text-decoration: none;
         color: antiquewhite;
         font-family: "Shadows Into Light", cursive;
         font-weight: 1000;
-        font-size: 40px;
+        font-size: clamp(28px, 4vw, 40px);
       }
 
-      .gani a:active{
-
+      .gani a:active {
         font-size: 38px;
         transition-duration: 0.5ms;
       }
 
-      .one{
+      @media (max-width: 600px) {
+        body {
+          padding: 0 10px 24px;
+        }
 
-        height: 1000px;
-        width: 1000px;
-        background-image: url(download.png);
-        background-repeat: no-repeat;
-        background-color: transparent;
-        margin-left: 380px;
+        p {
+          margin-top: 30px;
+        }
+
+        .one {
+          width: 94vw;
+          height: 52vw;
+          min-height: 170px;
+          max-height: 320px;
+        }
+
+        .gani {
+          margin-top: 20px;
+        }
       }
 
-      p{
-        
-        color: antiquewhite;
-        font-family: "Shadows Into Light", cursive;
-        font-weight: 800;
-        font-size: 50px;
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 20px;
-    
-      }
+      @media (max-width: 380px) {
+        p {
+          font-size: 31px;
+        }
 
+        .one {
+          min-height: 145px;
+        }
+
+        .gani a {
+          font-size: 26px;
+        }
+      }
     </style>
 </head>
 <body>
