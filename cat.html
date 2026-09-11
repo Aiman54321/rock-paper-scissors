@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <title>Rock Paper Scissors</title>
+
+  <script src="script.js" defer></script>
+
+  <style>
+
+    *{
+
+      box-sizing: border-box;
+      overflow: hidden;
+     
+    }
+
+    button {
+    
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+
+  }
+
+  body{
+
+    background-color: #15141E;
+    height: 730px;
+    border: 3px solid whitesmoke;
+
+  }
+
+
+  .move{
+
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    border: 5px antiquewhite solid;
+    border-radius: 50%;
+    padding: 45px;
+    margin-left: 10px;
+    margin-right: 30px;
+  
+  }
+
+  .reset
+  {
+
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+  }
+
+  .chy{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 10px;
+  }
+
+  .scoring{
+
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+    color: antiquewhite;
+    font-family: "Shadows Into Light", cursive;
+    margin-top: 22px;
+  }
+
+  .princess
+  {
+    margin-left: 745px;
+    margin-top: 20px;
+  }
+
+  #project
+  {
+
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: antiquewhite;
+    font-family: "Shadows Into Light", cursive;
+    margin-top: 52px;
+  }
+
+  #myModal 
+  {
+  width: 450px;
+  height: 300px;
+  border-radius: 20px;
+  background-color: #15141E;
+  color: white;
+  border: 5px solid white;
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 25px;
+  padding-bottom: 10px;
+  
+  }
+
+  dialog::backdrop{
+
+  background-color: rgba(21, 20, 30, 0.6);
+  backdrop-filter: blur(2px);
+
+  }
+  
+
+ .close-btn
+ {
+  color: white;
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 25px;
+  border: 2px solid wheat;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+
+ }
+ 
+  </style>
+
+</head>
+
+<body>
+
+<p id="project">Rock Paper Scissors</p>
+
+<div class="chy">
+
+<button onclick="playGame('Rock')"><img src="rock1.png" class="move"></button>
+<button onclick="playGame('Paper')"><img src="paper1.png" class="move"></button>
+<button onclick="playGame('Scissors')"><img src="scissors1.png" class="move"></button>
+
+</div>
+
+
+
+
+
+<div class="scoring">
+
+<p>Win: <span id="winList">0</span></p>
+<p>Loss: <span id="lossList">0</span></p>
+<p>Tie: <span id="tieList">0</span></p>
+
+
+</div>
+
+
+<div class="princess">
+
+<button onclick="
+
+score.wins= 0;
+score.losses= 0;
+score.ties= 0;
+
+localStorage.removeItem('score');
+updateScore();
+rotate();
+
+
+" class="btn"><img src="r1.png" class="reset" ></button>
+
+</div>
+
+  <button onclick="myModal.showModal()"></button>
+  
+  <dialog id="myModal">
+  <p id="statement"></p>
+  <button class="close-btn" onclick="myModal.close()">Close</button>
+  </dialog>
+  
+
+  
+
+
+
+</body>
+</html>
